@@ -9,10 +9,15 @@ namespace GradeBook
             var name = args.Length > 0 ? args[0] : "World";
             Console.WriteLine($"Hello {name}!");
 
-            var number1 = 2.14;
-            var number2 = 1;
-            var result = number1 + number2;
-            System.Console.WriteLine(result);
+            var numbers = new double[] {2.14, 1.14, 0.14, 1};
+            
+            var result = 0D;
+            foreach(var number in numbers)
+            {
+                result += number;
+            }
+
+            Console.WriteLine(result);
         }
     }
 }
