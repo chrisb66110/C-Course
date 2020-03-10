@@ -7,19 +7,13 @@ namespace GradeBook
     {
         static void Main(string[] args)
         {
-            var name = args.Length > 0 ? args[0] : "World";
-            Console.WriteLine($"Hello {name}!");
+            var book = new Book("BookTest");
+            book.AddGrade(89.2);
+            book.AddGrade(90.1);
+            book.AddGrade(101);
 
-            var numbers = new List<double>() {2.14, 1.14, 0.14, 1};
-            
-            var result = 0D;
-            foreach(var number in numbers)
-            {
-                result += number;
-            }
-            result /= numbers.Count;
-
-            Console.WriteLine($"The average grade is {result:N2}.");
+            book.ShowStatistics();
+            book.ShowPreStatistics();
         }
     }
 }
