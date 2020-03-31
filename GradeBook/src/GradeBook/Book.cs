@@ -46,6 +46,11 @@ namespace GradeBook
             return response;
         }
 
+        public double GetPreMaxValue()
+        {
+            return maxValue;
+        }
+
         public double GetMinValue()
         {
             var response = 100.0;
@@ -59,6 +64,11 @@ namespace GradeBook
             return response;
         }
 
+        public double GetPreMinValue()
+        {
+            return minValue;
+        }
+
         public double GetAvgValue()
         {
             var response = 0.0;
@@ -69,6 +79,11 @@ namespace GradeBook
 
             response /= _grades.Count;
             return response;
+        }
+
+        public double GetPreAvgValue()
+        {
+            return avgValue;
         }
 
         public void ShowStatistics()
