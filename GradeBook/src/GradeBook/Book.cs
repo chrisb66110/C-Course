@@ -5,38 +5,38 @@ namespace GradeBook
 {
     public class Book
     {
-        private List<double> _grades;
-        private string _name;
-        private double minValue;
-        private double avgValue;
-        private double maxValue;
+        private List<double> _Grades;
+        public string Name;
+        private double MinValue;
+        private double AvgValue;
+        private double MaxValue;
 
         public Book(string name)
         {
-            _grades = new List<double>();
-            _name = name;
-            minValue = 100.0;
-            avgValue = 0;
-            maxValue = 0.0;
+            _Grades = new List<double>();
+            Name = name;
+            MinValue = 100.0;
+            AvgValue = 0;
+            MaxValue = 0.0;
         }
 
         public void AddGrade(double grade)
         {
             if( 0 <= grade && grade <= 100)
             {
-                minValue = minValue<grade ? minValue : grade;
-                maxValue = maxValue>grade ? maxValue : grade;
-                avgValue = avgValue * _grades.Count;
-                avgValue += grade;
-                avgValue /= _grades.Count + 1;
-                _grades.Add(grade);
+                MinValue = MinValue<grade ? MinValue : grade;
+                MaxValue = MaxValue>grade ? MaxValue : grade;
+                AvgValue = AvgValue * _Grades.Count;
+                AvgValue += grade;
+                AvgValue /= _Grades.Count + 1;
+                _Grades.Add(grade);
             }
         }
 
         public double GetMaxValue()
         {
             var response = 0.0;
-            foreach (var grade in _grades)
+            foreach (var grade in _Grades)
             {
                 if(grade > response)
                 {
@@ -48,13 +48,13 @@ namespace GradeBook
 
         public double GetPreMaxValue()
         {
-            return maxValue;
+            return MaxValue;
         }
 
         public double GetMinValue()
         {
             var response = 100.0;
-            foreach (var grade in _grades)
+            foreach (var grade in _Grades)
             {
                 if(grade < response)
                 {
@@ -66,24 +66,24 @@ namespace GradeBook
 
         public double GetPreMinValue()
         {
-            return minValue;
+            return MinValue;
         }
 
         public double GetAvgValue()
         {
             var response = 0.0;
-            foreach (var grade in _grades)
+            foreach (var grade in _Grades)
             {
                 response += grade;
             }
 
-            response /= _grades.Count;
+            response /= _Grades.Count;
             return response;
         }
 
         public double GetPreAvgValue()
         {
-            return avgValue;
+            return AvgValue;
         }
 
         public Statistics GetStatistics()
@@ -94,7 +94,7 @@ namespace GradeBook
             var _minPreValue = GetPreMinValue();
             var _avgPreValue = GetPreAvgValue();
             var _maxPreValue = GetPreMaxValue();
-            
+
             var statistics = new Statistics(_minValue, _avgValue, _maxVlue, _minPreValue, _avgPreValue, _maxPreValue);
 
             return statistics;
