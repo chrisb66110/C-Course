@@ -86,18 +86,18 @@ namespace GradeBook
             return avgValue;
         }
 
-        public void ShowStatistics()
+        public Statistics GetStatistics()
         {
-            Console.WriteLine($"MaxValue {GetMaxValue()}!");
-            Console.WriteLine($"AvgValue {GetAvgValue()}!");
-            Console.WriteLine($"MinValue {GetMinValue()}!");
-        }
+            var _minValue = GetMinValue();
+            var _avgValue = GetAvgValue();
+            var _maxVlue = GetMaxValue();
+            var _minPreValue = GetPreMinValue();
+            var _avgPreValue = GetPreAvgValue();
+            var _maxPreValue = GetPreMaxValue();
+            
+            var statistics = new Statistics(_minValue, _avgValue, _maxVlue, _minPreValue, _avgPreValue, _maxPreValue);
 
-        public void ShowPreStatistics()
-        {
-            Console.WriteLine($"MaxValue {maxValue}!");
-            Console.WriteLine($"AvgValue {avgValue}!");
-            Console.WriteLine($"MinValue {minValue}!");
+            return statistics;
         }
     }
 }

@@ -12,8 +12,10 @@ namespace GradeBook
             book.AddGrade(90.1);
             book.AddGrade(101);
 
-            book.ShowStatistics();
-            book.ShowPreStatistics();
+            var statistics = book.GetStatistics();
+
+            statistics.ShowStatistics();
+            statistics.ShowPreStatistics();
         }
     }
 }
