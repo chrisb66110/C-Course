@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Diagnostics.CodeAnalysis;
 
 namespace GradeBook
 {
-    class Program
+    [ExcludeFromCodeCoverage]
+    public class Program
     {
         static void Main(string[] args)
         {
