@@ -1,8 +1,9 @@
-using System;
+using System.Diagnostics.CodeAnalysis;
 using Xunit;
 
 namespace GradeBook.Tests
 {
+    [ExcludeFromCodeCoverage]
     public class TypeTest
     {
         [Fact]
